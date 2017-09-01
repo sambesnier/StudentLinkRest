@@ -27,7 +27,7 @@ public class VoteResource {
 	@SuppressWarnings("unchecked")
 	@GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getUsers() {
+    public Response getVotes() {
 		
 		Repository repo = new Repository();
 		List<Vote> votes = VoteContext.getContext().getVotes();
@@ -56,7 +56,7 @@ public class VoteResource {
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response newUser(String payload) {
+	public Response newVote(String payload) {
 		
 		try {
 			JSONObject json = (JSONObject) new JSONParser().parse(payload);
